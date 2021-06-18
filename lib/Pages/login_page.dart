@@ -61,33 +61,36 @@ class _LoginPageState extends State<LoginPage> {
                       height: 40,
                     ),
 
-                    InkWell(
-                      hoverColor: Colors.white,
-                      onTap: () async {
-                        setState(() {
-                          changebutton = true;
-                        });
-
-                          await Future.delayed(Duration(seconds: 1));
-                          Navigator.pushNamed(context, MyRoutes.homeRoute);
-                      },
-                      child: AnimatedContainer(
-                        duration: Duration(seconds: 1),
-                        width: changebutton ? 40 : 400,
-                        height: 40,
-                        alignment: Alignment.center,
-                        child: changebutton
-                            ? Icon(
-                                Icons.done,
-                                color: Colors.white,
-                              )
-                            : Text("Login",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 18)),
-                        decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius:
-                                BorderRadius.circular(changebutton ? 50 : 10)),
+                    Material(
+                      borderRadius:
+                      BorderRadius.circular(changebutton ? 50 : 10),
+                      child: InkWell(
+                        hoverColor: Colors.white,
+                        onTap: () async {
+                          setState(() {
+                            changebutton = true;
+                          });
+                    
+                            await Future.delayed(Duration(seconds: 1));
+                            Navigator.pushNamed(context, MyRoutes.homeRoute);
+                        },
+                        child: AnimatedContainer(
+                          duration: Duration(seconds: 1),
+                          width: changebutton ? 40 : 400,
+                          height: 40,
+                          alignment: Alignment.center,
+                          child: changebutton
+                              ? Icon(
+                                  Icons.done,
+                                  color: Colors.white,
+                                )
+                              : Text("Login",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 18)),
+                          decoration: BoxDecoration(
+                              color: Colors.blue,
+               
+                        ),
                       ),
                     )
 
